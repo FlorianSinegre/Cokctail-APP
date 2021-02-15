@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import Tabs from '../views/Tabs.vue'
+import Tabs from '../views/NavBar.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -17,11 +17,11 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        component: () => import('@/views/ramdom.vue')
       },
       {
         path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        component: () => import('@/views/Search.vue')
       },
       {
         path: 'tab3',

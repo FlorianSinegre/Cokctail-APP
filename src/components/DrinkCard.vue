@@ -3,7 +3,7 @@
     <img :src="drink.strDrinkThumb" />
     <ion-card-header>
       <ion-card-subtitle>
-        {{ drink.strCategory }} | Served In
+        {{ drink.strCategory }} | Servie dans une
         {{ drink.strGlass }}
       </ion-card-subtitle>
       <ion-card-title>

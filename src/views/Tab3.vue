@@ -2,10 +2,10 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Search</ion-title>
+        <ion-title>rechercher</ion-title>
       </ion-toolbar>
       <ion-toolbar>
-        <ion-searchbar
+        <ion-searchbar aria-placeholder="Rechercher...."
           debounce="500"
           :onIonChange="(e) => fetchSearchResults(e.detail.value)"
         ></ion-searchbar>
@@ -21,7 +21,7 @@
         class="center"
         v-if="state.searchResults && state.searchResults.length === 0"
       >
-        <ion-label>No Results. Please Search Above</ion-label>
+        <ion-label>Pas de résultat</ion-label>
       </div>
       <drink-card
         v-for="drink in state.searchResults"

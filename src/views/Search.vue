@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Search By Ingredient</ion-title>
+        <ion-title>Chercher par ingredient</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content v-if="state.loading">

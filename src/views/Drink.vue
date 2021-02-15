@@ -63,8 +63,7 @@ export default {
       state.loading = true;
 
       const res = await axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`:
-      );
+        `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`);
 
       if (res.data) {
         state.drink = res.data?.drinks[0];
