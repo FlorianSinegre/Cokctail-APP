@@ -26,12 +26,20 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'tab3',
         component: () => import('@/views/Tab3.vue')
+      },
+      {
+        path: 'tab4',
+        component: () => import('@/views/Favoris.vue')
       }
     ]
   },
   {
     path: '/drinks-by-ingredient/:ingredient',
     component: () => import('@/views/DrinksByIngredient.vue')
+  },
+  {
+    path: '/drinks-by-favoris/:id',
+    component: () => import('@/views/FavorisVue.vue')
   },
   {
     path: '/drink/:id',

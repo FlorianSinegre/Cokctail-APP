@@ -26,6 +26,9 @@
         </template>
       </ion-list>
     </ion-card-content>
+    <ion-button  @click="() => addFavoris(drink.strDrink, drink.idDrink)" >Ajouter en favoris</ion-button>
+
+
   </ion-card>
 </template>
 
@@ -41,6 +44,9 @@ import {
   IonItem,
   IonList,
 } from "@ionic/vue";
+import {reactive} from "vue";
+import IDrink from "../interfaces/IDrink";
+import axios from "axios";
 export default {
   name: "DrinkCard",
   props: {
@@ -57,5 +63,34 @@ export default {
     IonItem,
     IonList,
   },
+  setup(){
+    const state = reactive({
+      favDrinks: [] as IDrink[],
+      loading: false,
+    });
+
+    const addFavoris = async (nameDrink: string, idDrink: string) => {
+      state.loading = true;
+
+      const res = await axios.post(
+          `http://localhost:8000/favoris/add/`, {nameDrinks: nameDrink, idDrinks: idDrink}
+      );
+
+      if (res.data) {
+        console.log(res.data);
+      }
+
+      state.loading = false;
+    };
+    return {
+      addFavoris,
+    };
+  },
 };
 </script>
+
+<style>
+img{
+  height: 50vh;
+}
+</style>
