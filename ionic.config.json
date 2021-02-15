@@ -1,0 +1,8 @@
+{
+  "name": "ionic_cocktail_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "c89ebd7b"
+}
