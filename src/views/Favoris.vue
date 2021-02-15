@@ -11,6 +11,9 @@
       </div>
     </ion-content>
     <ion-content :fullscreen="true" v-else>
+      <ion-refresher slot="fixed" @ionRefresh="doRefresh">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
       <ion-list>
         <ion-item
             v-for="cocktail in state.favCocktail"
@@ -38,7 +41,7 @@ import {
   IonSpinner,
   IonLabel,
   IonItem,
-  IonList,
+  IonList, IonRefresher, IonRefresherContent,
 } from "@ionic/vue";
 import {reactive} from "vue";
 import {useRouter} from "vue-router";
@@ -58,6 +61,8 @@ export default {
     IonLabel,
     IonItem,
     IonList,
+    IonRefresher,
+    IonRefresherContent,
   },
   setup() {
     const router = useRouter();
@@ -82,11 +87,20 @@ export default {
       state.loading = false;
     };
 
+    const doRefresh = (event: CustomEvent) => {
+      fetchFavoris();
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      //@ts-ignore
+      event.target?.complete();
+    };
+
     fetchFavoris();
 
     return {
       router,
       state,
+      doRefresh,
     };
   },
 };

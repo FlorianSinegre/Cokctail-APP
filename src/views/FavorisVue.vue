@@ -15,7 +15,7 @@
     </ion-content>
     <ion-content :fullscreen="true" v-else>
       <DrinkCard :drink="state.lstDrinks" />
-      <ion-button  @click="() => deleteFavoris(state.lstDrinks.idDrink)" >Supprimer des favoris</ion-button>
+      <ion-button href="/tabs/tab4" @click="() => deleteFavoris(state.lstDrinks.idDrink)" >Supprimer des favoris</ion-button>
 
     </ion-content>
   </ion-page>
@@ -55,6 +55,7 @@ export default {
     IonContent,
     IonPage,
     IonSpinner,
+
   },
   setup() {
     const router = useRouter();
